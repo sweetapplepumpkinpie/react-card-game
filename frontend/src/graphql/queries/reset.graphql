@@ -1,0 +1,20 @@
+mutation reset {
+  reset {
+    success
+    game {
+      id
+      aces
+      cards
+      dealt
+      selected {
+        id
+        number
+        suit
+      }
+      started
+      done
+      isWinner
+      rest
+    }
+  }
+}

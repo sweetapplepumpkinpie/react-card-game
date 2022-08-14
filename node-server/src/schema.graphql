@@ -1,0 +1,37 @@
+type Game {
+  id: ID!
+  cards: [Int!]!
+  dealt: [Int!]!
+  aces: Int!
+  done: Boolean!
+  selected: [DeckCard!]!
+  started: Boolean!
+  isWinner: Boolean!
+  rest: Int!
+}
+
+type DeckCard {
+  id: ID!
+  number: Int!
+  suit: Int!
+}
+
+type DealResult {
+  success: Boolean!
+  game: Game
+}
+
+type User {
+  id: ID!
+  username: String
+  games: [Game!]
+}
+
+type Query {
+  me: User
+}
+
+type Mutation {
+  deal: DealResult
+  reset: DealResult
+}
